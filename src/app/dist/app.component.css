@@ -1,0 +1,114 @@
+.notes-app__container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.notes-app__title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+.notes-app__switcher {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.notes-app__tabs {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+.notes-app__tab-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+.notes-app__tab-btn:hover {
+  background: #f3f3f3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.notes-app__tab-btn:focus {
+  outline: none;
+  border-color: #00bfa5;
+  box-shadow: 0 0 0 2px rgba(0, 191, 165, 0.3);
+}
+.notes-app__storage-info {
+  margin-top: 1rem;
+  font-size: 0.9em;
+  color: #666;
+}
+.notes-app__form-group {
+  margin-bottom: 1rem;
+  display: block;
+}
+.notes-app__input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.notes-app__input:focus {
+  outline: none;
+  border-color: #00bfa5;
+  box-shadow: 0 0 0 2px rgba(0, 191, 165, 0.3);
+}
+.notes-app__submit-btn {
+  display: inline-block;
+  background: #00bfa5;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  margin-bottom: 2rem;
+}
+.notes-app__submit-btn:hover:not(:disabled) {
+  background: #00a590;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.notes-app__submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.notes-app__list {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.notes-app__item {
+  padding: 1rem;
+  background: #f9f9f9;
+  border-left: 4px solid #00bfa5;
+  margin-bottom: 0.5rem;
+}
+.notes-app__item:last-child {
+  margin-bottom: 0;
+}
+.notes-app__item--empty {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 2rem 1rem;
+}
+.notes-app__item-header {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+.notes-app__item-content p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: #333;
+}
+.notes-app__item-footer {
+  margin-top: 0.75rem;
+  font-size: 0.85em;
+  color: #777;
+}

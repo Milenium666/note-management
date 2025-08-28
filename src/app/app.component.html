@@ -1,0 +1,47 @@
+<div class="notes-app" tuiWrapper>
+  <div class="notes-app__container">
+    <h1 class="notes-app__title">📝 Управление заметками</h1>
+
+    <div class="notes-app__switcher">
+      <tui-tabs class="notes-app__tabs" [activeItemIndex]="storageType === 'api' ? 0 : 1"
+        (activeItemIndexChange)="($event === 0) ? switchToApi() : switchToLocalStorage()">
+        <button tuiTab class="notes-app__tab-btn">API</button>
+        <button tuiTab class="notes-app__tab-btn">LocalStorage</button>
+      </tui-tabs>
+      <p class="notes-app__storage-info">Текущее хранилище: {{ storageType }}</p>
+    </div>
+
+    <label tuiLabel class="notes-app__form-group">
+      Заголовок
+      <input tuiInput class="notes-app__input" [(ngModel)]="newNoteTitle" tuiTextfieldCleaner />
+    </label>
+
+    <label tuiLabel class="notes-app__form-group">
+      Содержание
+      <input tuiInput class="notes-app__input" [(ngModel)]="newNoteContent" tuiTextfieldCleaner />
+    </label>
+
+    <button tuiButton size="m" class="notes-app__submit-btn" [disabled]="!newNoteTitle || !newNoteContent"
+      (click)="addNote()">
+      Добавить заметку
+    </button>
+
+    <div tuiGroup class="notes-app__list">
+      <div *ngFor="let note of notes" class="notes-app__item">
+        <div class="notes-app__item-header">
+          <strong>{{ note.title }}</strong>
+        </div>
+        <div class="notes-app__item-content">
+          <p>{{ note.content }}</p>
+        </div>
+        <div class="notes-app__item-footer">
+          <small>ID: {{ note.id }}</small>
+        </div>
+      </div>
+
+      <div *ngIf="notes.length === 0" class="notes-app__item notes-app__item--empty">
+        Нет заметок
+      </div>
+    </div>
+  </div>
+</div>
